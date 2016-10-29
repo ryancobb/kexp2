@@ -4,6 +4,7 @@ $( document ).ready(function() {
   $('.track').hide();
   $('.album').hide();
   $('.albumart').hide();
+  $('.material-icons').hide().fadeIn(1000);
 
   getSong();
   check_icon_state();
@@ -50,10 +51,10 @@ var getSong = function () {
 		    }
 
 		    dTime.html(data.TimePlayed);
-		    dAlbumArt.attr('src', (data.AlbumArt) ? data.AlbumArt : defaultImage).fadeIn(500);
-		    dArtist.html(artistLink).fadeIn(500);
-		    dTrack.html((data.SongTitle) ? data.SongTitle : '').fadeIn(500);
-		    dAlbum.html((data.Album) ? data.Album : '').fadeIn(1000);
+		    dAlbumArt.attr('src', (data.AlbumArt) ? data.AlbumArt : defaultImage).fadeIn(750);
+		    dArtist.html(artistLink).fadeIn(750);
+		    dTrack.html((data.SongTitle) ? data.SongTitle : '').fadeIn(750);
+		    dAlbum.html((data.Album) ? data.Album : '').fadeIn(750);
 		},
 		error: function(xhr, textStatus, errorThrown) {
 		    if (console) console.log("getSong() error:<br />" + xhr.responseText + "<br />" + errorThrown + "<br />" + textStatus);

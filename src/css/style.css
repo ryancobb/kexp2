@@ -3,9 +3,13 @@
 }
 
 #now-playing {
-  margin: 10px 5px;
+  margin: 0px 5px 10px 5px;;
 }
 
 .artistname {
   margin: 0;
+}
+
+.time {
+  color: gray;
 }
