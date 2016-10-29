@@ -1,0 +1,11 @@
+#main-window {
+  width: 500px;
+}
+
+#now-playing {
+  margin: 10px 5px;
+}
+
+.artistname {
+  margin: 0;
+}
