@@ -7,11 +7,11 @@
   },
 
   "description": "A simple extension to listen to the 128k KEXP radio stream.",
-  "version": "0.21",
+  "version": "0.30",
 
   "background": {
     "scripts": ["src/js/background.js"],
-    "persistent": false
+    "persistent": true
   },
 
   "browser_action": {

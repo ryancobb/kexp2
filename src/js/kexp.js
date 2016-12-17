@@ -1,9 +1,6 @@
 $( document ).ready(function() {
 
-  $('.artistname').html("Loading...");
-  $('.track').hide();
-  $('.album').hide();
-  $('.albumart').hide();
+  $('.albumart').attr('src', '/assets/images/ring.svg')
   $('.material-icons').hide().fadeIn(1000);
 
   getSong();
@@ -11,7 +8,7 @@ $( document ).ready(function() {
 
   setInterval(getSong, 5000);
 
-  $("#playpause").on("click",function(){
+  $("#button").on("click",function(){
    aud_play_pause();
   });
 });
@@ -57,7 +54,9 @@ var getSong = function () {
 		    dAlbum.html((data.Album) ? data.Album : '').fadeIn(750);
 		},
 		error: function(xhr, textStatus, errorThrown) {
-		    if (console) console.log("getSong() error:<br />" + xhr.responseText + "<br />" + errorThrown + "<br />" + textStatus);
+        dAlbumArt.attr('src', "/assets/images/ring.svg");
+        dArtist.html("Oh no! KEXP may be experiencing issues");
+        dTrack.html("I'll keep trying...");
 			}
 	});
 };
@@ -93,9 +92,9 @@ function check_icon_state() {
 function set_icon(status) {
   switch (status) {
     case "play":
-      $("#button").html("play_circle_outline");
+      $("#button").attr("src", "/assets/icons/play.svg");
       break;
     case "pause":
-      $("#button").html("pause_circle_outline");
+      $("#button").attr("src", "/assets/icons/pause.svg");
   }
 }

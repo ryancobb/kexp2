@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/src/css/style.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/src/css/style.css">
   </head>
   <body>
 
-    <div class="center">
-      <img class="albumart responsive-img" src="">
-    </div>
+    <div id="app">
+      <div id="album-art-container">
+        <img class="albumart" src=""/>
+      </div>
 
-    <div id="main-window" class="container">
-      <div class="time center"></div>
-      <div id="now-playing" class="row valign-wrapper">
-        <div class="col s10 valign">
-          <h5 class="artistname"></h5>
-          <div class="track"></div>
-          <div class="album"></div>
-        </div>
-        <div class="col s2 valign">
+      <div id="toolbar">
+        <div class="time"></div>
+        <div id="footer">
+          <div id="now-playing">
+            <h2 class="artistname"></h2>
+            <div class="track"></div>
+            <div class="album"></div>
+          </div>
           <div id="playpause">
-            <i id="button" class="material-icons medium valign">play_circle_outline</i>
+            <img id="button" src="/assets/icons/play.svg"/>
           </div>
         </div>
       </div>
