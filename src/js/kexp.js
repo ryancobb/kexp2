@@ -1,7 +1,13 @@
 $( document ).ready(function() {
 
-  $('.albumart').attr('src', '/assets/images/ring.svg')
-  $('.material-icons').hide().fadeIn(1000);
+
+  $('.time').hide().fadeIn(750);
+  $('.artistname').hide().fadeIn(750);
+  $('.track').hide().fadeIn(750);
+  $('.album').hide().fadeIn(750);
+  $('.album-art-container').attr('src', '/assets/images/ring.svg').hide().fadeIn(750);
+  $('#button').hide().fadeIn(750);
+
 
   getSong();
   check_icon_state();
@@ -11,6 +17,19 @@ $( document ).ready(function() {
   $("#button").on("click",function(){
    aud_play_pause();
   });
+
+  var siriWave = new SiriWave({
+      container: document.getElementById('album-art-container'),
+      width: 500,
+      height: 450,
+
+      speed: 0.025,
+      color: '#000',
+      frequency: 2
+
+  });
+
+  siriWave.start();
 });
 
 var getSong = function () {
@@ -37,21 +56,23 @@ var getSong = function () {
 		        $('.artist em').show();
 		        dArtist.html('');
             artistLink = 'DJ Break...';
-            defaultImage = "/assets/images/turntable.gif";
+            defaultImage = "";
 		    } else {
 		        if (data.Artist) {
 		            $('.artist em').hide();
 		            artistName = data.Artist;
 		            artistLink = '<a target="_new" href="http://www.google.com#q=' + encodeURI(artistName) + '">' + artistName + '</a>';
-		            defaultImage = "/assets/images/turntable.gif";
+		            defaultImage = "";
 		        }
 		    }
 
+        data.AlbumArt ? $("canvas").hide() : $("canvas").show();
+
 		    dTime.html(data.TimePlayed);
-		    dAlbumArt.attr('src', (data.AlbumArt) ? data.AlbumArt : defaultImage).fadeIn(750);
-		    dArtist.html(artistLink).fadeIn(750);
-		    dTrack.html((data.SongTitle) ? data.SongTitle : '').fadeIn(750);
-		    dAlbum.html((data.Album) ? data.Album : '').fadeIn(750);
+		    dAlbumArt.attr('src', (data.AlbumArt) ? data.AlbumArt : defaultImage);
+		    dArtist.html(artistLink);
+		    dTrack.html((data.SongTitle) ? data.SongTitle : '');
+		    dAlbum.html((data.Album) ? data.Album : '');
 		},
 		error: function(xhr, textStatus, errorThrown) {
         dAlbumArt.attr('src', "/assets/images/ring.svg");

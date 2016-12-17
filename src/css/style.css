@@ -14,11 +14,12 @@ body {
 
 #album-art-container {
   width: 100%;
+  height: 500px;
 }
 
 #album-art-container img {
  width: 100%;
- height: auto;
+ max-height: 500px;
 }
 
 #toolbar {
