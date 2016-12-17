@@ -30,6 +30,7 @@ $( document ).ready(function() {
   });
 
   siriWave.start();
+  $("canvas").hide();
 });
 
 var getSong = function () {
@@ -75,6 +76,7 @@ var getSong = function () {
 		    dAlbum.html((data.Album) ? data.Album : '');
 		},
 		error: function(xhr, textStatus, errorThrown) {
+        $("canvas").hide();
         dAlbumArt.attr('src', "/assets/images/ring.svg");
         dArtist.html("Oh no! KEXP may be experiencing issues");
         dTrack.html("I'll keep trying...");
