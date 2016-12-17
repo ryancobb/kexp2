@@ -5,7 +5,7 @@ $( document ).ready(function() {
   $('.artistname').hide().fadeIn(750);
   $('.track').hide().fadeIn(750);
   $('.album').hide().fadeIn(750);
-  $('.album-art-container').attr('src', '/assets/images/ring.svg').hide().fadeIn(750);
+  $('.albumart').attr('src', '/assets/images/ring.svg').hide().fadeIn(750);
   $('#button').hide().fadeIn(750);
 
 
