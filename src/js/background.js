@@ -1,4 +1,4 @@
-var audio = new Audio('http://50.31.180.202/');
+var audio = new Audio('');
 
 chrome.extension.onMessage.addListener( function(request, sender, sendResponse)
 {
@@ -9,9 +9,11 @@ chrome.extension.onMessage.addListener( function(request, sender, sendResponse)
   else if (request.msg == "pause")
   {
     audio.pause();
+    audio = new Audio('');
   }
   else if (request.msg == "play")
   {
+    audio = new Audio('http://50.31.180.202/');
     audio.play();
   }
 })
