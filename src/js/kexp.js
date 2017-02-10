@@ -54,6 +54,8 @@ function startSiriWave() {
 }
 
 var getSong = function () {
+  var end_time = moment(new Date()).utc().format("YYYY-MM-DDTHH:mm:00").toString() + "Z";
+  
 	$.ajax({
 		type: "GET",
     crossDomain: true,
@@ -62,6 +64,9 @@ var getSong = function () {
       var stationData = buildStationData(data);
       stationData.playtype == 4 ? setAirbreak(stationData) : setArtistData(stationData);
 		},
+    data: {
+      end_time: end_time
+    },
 		error: function(xhr, textStatus, errorThrown) {
       handleError();
 		}
